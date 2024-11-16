@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Updating</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+
+        <div class="container" mt-5>
+        <h3>Updating details</h3>
+        <br/>
+        <div class="col-md-6">
+            <form action="" method="post" enctype="multipart/form-data"  class = "needs-validation">
+
+                {% csrf_token %}
+
+                <input name="stud_name" type="text" value = "{{ student.stud_name }}" placeholder="Student name" class="form-control" required /> <br>
+    
+                <input name="stud_age" type="number" value= "{{ student.stud_age }}" placeholder="Student age" class="form-control" required /> <br>
+    
+                <input name="stud_sch" type="text" value="{{ student.stud_sch }}" placeholder="School" class="form-control" required /> 
+                <br />
+    
+                <textarea name="stud_des"  placeholder="Description" class="form-control" required >{{ student.stud_des }}</textarea> 
+                <br />
+    
+                <input name="stud_pass" type="file"  class="form-control" required /> 
+                <br/>
+    
+                <input name="stud_reg" type="number" value="{{ student.stud_reg }}"  placeholder= "Reg Number"  class="form-control" required /> 
+                <br/>
+    
+                <input type="submit" value="Update" class="btn btn-primary" /> 
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

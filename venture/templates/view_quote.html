@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{%  block code %}
+    <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Message</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+        <tbody>
+        {% for quote in quotes %}
+            <tr>
+              <td>{{ quote.name }}</td>
+              <td>{{ quote.email }}</td>
+              <td>{{ quote.phone }}</td>
+              <td>{{ quote.message }}</td>
+              <td>
+                <a href="{% url 'update_data' quote.id %}">Edit</a>
+              </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+     </table>
+    </div>
+
+    <div>
+        <form action="" method="post">
+          {% csrf_token %}
+          <input type="text" name="name" value="{{ quote.name }}" required>
+          <input type="email" name="email" value="{{ quote.email }}" required>
+          <input type="text" name="phone" value="{{ quote.phone }}" required>
+          <textarea name="message" rows="6" required>{{ quote.message }}</textarea>
+          <button type="submit">Update</button>
+        </form>
+
+    </div>
+
+{% endblock %}

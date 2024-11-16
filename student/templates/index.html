@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+</head>
+<body>
+    <a href="view/">VIEW</a>
+    <h1>Welcome to todays lesson on 11/12/2024</h1>
+    <p>Django CRUD</p>
+    <p>Install a package called pillow (pip install pillow)</p>
+    <p>Settings</p>
+    <ul>
+        <li>Go to project root and create a media directory(any upload made will be stored here photos)</li>
+        <li>go to setting file and import os</li>
+        <li>Define media_root (MEDIA_ROOT = os.path.join(BASE_DIR, 'media'))and media_url (MEDIA_URL = '/media/') in  the settings downwards</li>
+        <li>Go to project urls and make two imports(static and setting)</li>
+        <li>Concatenation (+static(settings.MEDIA_URLS, document_root))</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <h2> Creating a form</h2>
+    <ol>
+        <li>Name</li>
+        <li>Age</li>
+        <li>School</li>
+        <li>Occupation</li>
+        <li>image</li>
+        <li>Reg No</li>
+    </ul>
+    <p>Tables in django are referred to as models</p>
+    <p>anytime you make changes to the models file you must make and run migrations</p>
+    <h2>Wednesday Afternoon Lesson</h2>
+    <h3>Collecting and Saving the data</h3>
+    <ol>
+        <li>In the views.py create a function(to capture data and save it in our model)</li>
+        <li>Create the url to call the function and should be used as the form action. should not be accesed directly</li>
+        <li>stud_name = request.POST['stud_name'] or stud_name = request.POST.get('stud_name')</li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ol>
+    <a href="/details/{{ student.id }}/">Dets</a>
+    <a href="details/">Details</a>
+    <a href="UpdateStud/">Update</a>
+        
+        Using MYSQL
+        Go to the settings file
+        in database change the engine( sqlite3 = mysql) and in name change the name to the database name created
+        input password, host 
+
+</body>
+</html>

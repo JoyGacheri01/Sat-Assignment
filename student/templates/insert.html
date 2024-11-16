@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <h2>Creating a form</h2>
+
+    <div class="container" mt-5>
+        <h3>Insert you details</h3>
+        <br/>
+        <div class="col-md-6">
+            <form action="/insert_data/" method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                <label for="studentname">Your Name:</label>
+
+                <input name="stud_name" type="text" placeholder="Student name" class="form-control" required /> <br>
+    
+                <input name="stud_age" type="number" placeholder="Student age" class="form-control" required /> <br>
+    
+                <input name="stud_sch" type="text" placeholder="School" class="form-control" required /> 
+                <br />
+    
+                <textarea name="stud_des" placeholder="Description" class="form-control" required ></textarea> 
+                <br />
+    
+                <input name="stud_pass" type="file" class="form-control" required /> 
+                <br/>
+    
+                <input name="stud_reg" type="number" placeholder="Number" class="form-control" required /> 
+                <br/>
+    
+                <input type="submit" value="Save" class="btn btn-primary" /> 
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+</html>
