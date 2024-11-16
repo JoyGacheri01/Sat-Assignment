@@ -43,13 +43,13 @@ def view_quote(request):
     quotes = Quote.objects.all()
     return render(request, 'view_quote.html', {'quotes': quotes})
 
-def update_quote(request):
+def update_quote(request, id):
     quote = Quote.objects.get(id=id)
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        message = request.POST['message']
 
         quote.name = name
         quote.email = email

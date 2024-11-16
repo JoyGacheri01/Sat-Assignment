@@ -12,6 +12,6 @@ urlpatterns =[
     path('projects/', views.projects, name='projects'),
     path('insert_quote/', views.insert_quote, name='insert_quote'),
     path('view_quote/', views.view_quote, name='view_quote'),
-    path('update_quote/', views.update_quote, name='update_quote'),
+    path('update_quote/<id>', views.update_quote, name='update_quote'),
 
 ]
