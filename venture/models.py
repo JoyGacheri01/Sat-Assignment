@@ -29,6 +29,17 @@ class Construction(models.Model):
     def __str__(self):
         return self.construction_head
 
+class Testimonial(models.Model):
+    testimonial_head = models.CharField(max_length=100)
+    testimonial_sub = models.CharField(max_length=100)
+    testimonial_name = models.CharField(max_length=50)
+    testimonial_occ = models.CharField(max_length=50)
+    testimonial_message = models.TextField()
+
+    def __str__(self):
+        return self.testimonial_head
+
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=100)
