@@ -82,4 +82,3 @@ def view(request):
     return render(request, 'view.html', {"students": students})
 
 
-
