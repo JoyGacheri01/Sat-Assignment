@@ -1,14 +1,34 @@
 from django.db import models
 
 # Create your models here.
-class Quote(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone = models.CharField(max_length=15)
-    message = models.TextField()
+class Slider(models.Model):
+    slider_title = models.CharField(max_length=100)
+    slider_desc = models.TextField()
+    slider_btn = models.CharField(max_length=50)
+    slider_image = models.ImageField(upload_to="slides/", default="slides/default.png")
 
     def __str__(self):
-        return {self.name}
+        return self.slider_title
+
+class Quote(models.Model):
+    quote_title = models.CharField(max_length=100)
+    quote_desc = models.TextField()
+    quote_head = models.CharField(max_length=50, default="Quote")
+    quote_sub = models.CharField(max_length=50, default="Quote")
+
+    def __str__(self):
+        return self.quote_title
+
+class Construction(models.Model):
+    construction_head = models.CharField(max_length=100)
+    construction_sub = models.CharField(max_length=50)
+    construction_title= models.CharField(max_length=100)
+    construction_image= models.ImageField(upload_to="constructions/")
+    construction_desc = models.TextField()
+
+    def __str__(self):
+        return self.construction_head
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=100)
